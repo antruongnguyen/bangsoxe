@@ -148,8 +148,8 @@
     </label>
   </div>
 
-  <div bind:this={plateNumberElement} class="plate-container mt-1">
-    <div class="frame">
+  <div class="plate-container mt-1">
+    <div class="frame" bind:this={plateNumberElement}>
       <p>{line1}<br>{line2}</p>
     </div>
   </div>
