@@ -134,7 +134,7 @@
     </label>
   </div>
 
-  <div align="center mt-1">
+  <div align="center" class="mt-1">
     <label for="">
       <b>{locale.vehicle}</b>
     </label>
