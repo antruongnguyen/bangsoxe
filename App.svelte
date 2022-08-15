@@ -31,14 +31,14 @@
 	let plateNumberElement;
 
 	const hcmNo = [50, 51, 52, 53, 54, 55, 56, 57, 58, 59];
-	const alphabet = "ABCDEFGHIJKLMNPQRSTUVWXYZ";
-
-	function randomNumber(min = 0, max = 9) {
-	  return Math.floor(Math.random() * (max - min)) + min;
-	}
+	const alphabet = "ABCDEFGHKLMNPSTUVXYZ";
 
 	let line1 = "";
 	let line2 = "";
+
+	function randomNumber(min = 0, max = 9) {
+		return Math.floor(Math.random() * (max - min)) + min;
+	}
 
 	function randomPlateNumber() {
 	  const regionNo = hcmNo[randomNumber(0, hcmNo.length)];
@@ -71,10 +71,10 @@
 </script>
 
 <style>
-		@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap");
+		@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@400;600&display=swap');
 
 		main {
-		  font-family: "Exo 2", sans-serif;
+		  font-family: 'Saira Semi Condensed', sans-serif;
 		  text-align: center;
 		}
 
@@ -94,18 +94,19 @@
 		  border-radius: 2px;
 		}
 
-		.frame {
-		  padding: 0 5px;
-		  border: 6px solid #000;
-		  border-radius: 5px;
-		  width: 300px;
-		  height: 221px;
+		.plate {
 		  background-color: #fff;
+		  padding: 0 10px;
+		  border: 8px solid #000;
+		  border-radius: 8px;
+			width: 330px;
+			height: 243px;
+			font-size: 6.5rem;
+			line-height: 7.5rem;
 		}
 
 		.plate-container {
 		  font-weight: 600;
-		  font-size: 5.5em;
 		  width: fit-content;
 		  margin-left: auto;
 		  margin-right: auto;
@@ -116,7 +117,7 @@
 <main>
 	<h1>{locale.title}</h1>
   
-  <div align="center">
+  <div id="language-options" align="center">
     <label for="">
       <b>{locale.language}</b>
     </label>
@@ -132,7 +133,7 @@
     </label>
   </div>
 
-  <div align="center" class="mt-1">
+  <div id="vehicle-options" align="center" class="mt-1">
     <label for="">
       <b>{locale.vehicle}</b>
     </label>
@@ -149,7 +150,7 @@
   </div>
 
   <div class="plate-container mt-1">
-    <div class="frame" bind:this={plateNumberElement}>
+    <div id="plate" class="plate" bind:this={plateNumberElement}>
       <p>{line1}<br>{line2}</p>
     </div>
   </div>
