@@ -1,6 +1,7 @@
 <script>
 	import { toPng } from "html-to-image";
 	import download from "downloadjs";
+	import { onMount } from "svelte";
 
 	const locales = {
 	  en: {
@@ -33,8 +34,9 @@
 	const hcmNo = [50, 51, 52, 53, 54, 55, 56, 57, 58, 59];
 	const alphabet = "ABCDEFGHKLMNPSTUVXYZ";
 
-	let line1 = "";
-	let line2 = "";
+	let line1 = '';
+	let line2 = '';
+	let plateNumber = '';
 
 	function randomNumber(min = 0, max = 9) {
 		return Math.floor(Math.random() * (max - min)) + min;
@@ -51,8 +53,6 @@
 	  return `${line1} ${line2}`;
 	}
 
-	let plateNumber = randomPlateNumber();
-
 	function doGenerate() {
 	  plateNumber = randomPlateNumber();
 	}
@@ -60,6 +60,7 @@
 	function doDownload() {
 	  if (plateNumberElement) {
 	    toPng(plateNumberElement).then(function(dataUrl) {
+				console.log('Download plate number', plateNumber);
 	      download(dataUrl, `${plateNumber}.png`);
 	    });
 	  }
@@ -68,6 +69,24 @@
 	function doChangeLanguage() {
 	  locale = locales[language];
 	}
+
+	onMount(() => {
+		const params = new URLSearchParams(window.location.search);
+		if (params.get('lang')) {
+			language = params.get('lang');
+			doChangeLanguage();
+		}
+
+		if (params.get('vehicle')) {
+			vehicle = params.get('vehicle');
+		}
+
+		doGenerate();
+
+		if (params.get('action') === 'download') {
+			doDownload();
+		}
+	});
 </script>
 
 <style>
