@@ -491,6 +491,7 @@ var app = (function () {
         foreignObject.appendChild(node);
         return svgToDataURL(svg);
     }
+    //# sourceMappingURL=util.js.map
 
     const cache = {};
     function getCacheKey(url, includeQueryParams) {
@@ -562,6 +563,7 @@ var app = (function () {
         cache[cacheKey] = deferred;
         return deferred;
     }
+    //# sourceMappingURL=getBlobFromURL.js.map
 
     function formatCSSText(style) {
         const content = style.getPropertyValue('content');
@@ -604,6 +606,7 @@ var app = (function () {
         clonePseudoElement(nativeNode, clonedNode, ':before');
         clonePseudoElement(nativeNode, clonedNode, ':after');
     }
+    //# sourceMappingURL=clonePseudoElements.js.map
 
     async function cloneCanvasElement(node) {
         const dataURL = node.toDataURL();
@@ -706,6 +709,7 @@ var app = (function () {
             .then((clonedNode) => cloneChildren(node, clonedNode, options))
             .then((clonedNode) => decorate(node, clonedNode));
     }
+    //# sourceMappingURL=cloneNode.js.map
 
     const URL_REGEX = /url\((['"]?)([^'"]+?)\1\)/g;
     const URL_WITH_FORMAT_REGEX = /url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g;
@@ -766,6 +770,7 @@ var app = (function () {
         // eslint-disable-next-line promise/no-nesting
         deferred.then((css) => embed(css, url, baseUrl, options)), Promise.resolve(filteredCSSText)));
     }
+    //# sourceMappingURL=embedResources.js.map
 
     async function embedBackground(clonedNode, options) {
         var _a;
@@ -820,6 +825,7 @@ var app = (function () {
             .then((node) => embedImageNode(node, options))
             .then((node) => embedChildren(node, options));
     }
+    //# sourceMappingURL=embedImages.js.map
 
     function applyStyleWithOptions(node, options) {
         const { style } = node;
@@ -840,6 +846,7 @@ var app = (function () {
         }
         return node;
     }
+    //# sourceMappingURL=applyStyleWithOptions.js.map
 
     const cssFetchCache = {};
     function fetchCSS(url) {
@@ -1034,6 +1041,7 @@ var app = (function () {
             return clonedNode;
         });
     }
+    //# sourceMappingURL=embedWebFonts.js.map
 
     function getImageSize(node, options = {}) {
         const width = options.width || getNodeWidth(node);
@@ -1102,6 +1110,7 @@ var app = (function () {
     async function toPng(node, options = {}) {
         return toCanvas(node, options).then((canvas) => canvas.toDataURL());
     }
+    //# sourceMappingURL=index.js.map
 
     var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -1434,7 +1443,7 @@ var app = (function () {
     			attr_dev(p0, "class", "svelte-8tkvga");
     			add_location(p0, file, 152, 6, 3517);
     			attr_dev(div2, "class", "frame svelte-8tkvga");
-    			add_location(div2, file, 151, 4, 3491);
+    			add_location(div2, file, 151, 4, 3460);
     			attr_dev(div3, "class", "plate-container mt-1 svelte-8tkvga");
     			add_location(div3, file, 150, 2, 3421);
     			attr_dev(button0, "class", "svelte-8tkvga");
@@ -1495,7 +1504,7 @@ var app = (function () {
     			append_dev(p0, t16);
     			append_dev(p0, br);
     			append_dev(p0, t17);
-    			/*div3_binding*/ ctx[14](div3);
+    			/*div2_binding*/ ctx[14](div2);
     			append_dev(main, t18);
     			append_dev(main, p1);
     			append_dev(p1, button0);
@@ -1563,7 +1572,7 @@ var app = (function () {
     			/*$$binding_groups*/ ctx[10][0].splice(/*$$binding_groups*/ ctx[10][0].indexOf(input1), 1);
     			/*$$binding_groups*/ ctx[10][1].splice(/*$$binding_groups*/ ctx[10][1].indexOf(input2), 1);
     			/*$$binding_groups*/ ctx[10][1].splice(/*$$binding_groups*/ ctx[10][1].indexOf(input3), 1);
-    			/*div3_binding*/ ctx[14](null);
+    			/*div2_binding*/ ctx[14](null);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -1680,7 +1689,7 @@ var app = (function () {
     		$$invalidate(0, vehicle);
     	}
 
-    	function div3_binding($$value) {
+    	function div2_binding($$value) {
     		binding_callbacks[$$value ? 'unshift' : 'push'](() => {
     			plateNumberElement = $$value;
     			$$invalidate(3, plateNumberElement);
@@ -1736,7 +1745,7 @@ var app = (function () {
     		input1_change_handler,
     		input2_change_handler,
     		input3_change_handler,
-    		div3_binding
+    		div2_binding
     	];
     }
 
