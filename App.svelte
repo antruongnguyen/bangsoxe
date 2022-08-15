@@ -101,17 +101,15 @@
 		  width: 300px;
 		  height: 221px;
 		  background-color: #fff;
-		  margin: 20px;
 		}
 
 		.plate-container {
 		  font-weight: 600;
 		  font-size: 5.5em;
-		  display: flex;
-		  flex-direction: column;
-		  justify-content: center;
-		  align-content: center;
-		  align-items: center;
+		  width: fit-content;
+		  margin-left: auto;
+		  margin-right: auto;
+		  padding: 1rem;
 		}
 </style>
 
